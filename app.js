@@ -5,18 +5,18 @@ let mensajeDeAlerta = 'Debe ingresar un nombre';
 
 btnAgregar.addEventListener('click', agregarAmigo())
 
-//console.log(miAmigo);
 
-
-
+// Lógica de la función agregarAmigo
 function agregarAmigo () {
     let miAmigo = document.querySelector('#amigo').value;
 
+    // Al pulsar 'añadir', se verifica que el input no esté vacío
     if (miAmigo != '') {
         listaDeAmigos.push(miAmigo);
         actualizarListado(miAmigo);
         limpiarCaja();
     } else {
+        // se impide que el mensaje se muestre al cargar la página
         if (miAmigo === '' && listaDeAmigos.length === 0) {
             // Este es un truco para que el mensaje de alerta no se dispare al cargar la página
             // Simplemente doy una instrucción vacía, para que nada sea realizado
@@ -26,11 +26,13 @@ function agregarAmigo () {
     }
 }
 
+// Lógica de la función actualizarListado
 function actualizarListado(persona) {
     let listado = document.querySelector('#listaAmigos');
     listado.innerHTML += `<li>${persona}</li>`;    
 }
 
+// Lógica de la función sortearAmigo
 function sortearAmigo () {
     if (listaDeAmigos.length > 0) {
         let listado = document.querySelector('#listaAmigos');
@@ -44,9 +46,7 @@ function sortearAmigo () {
     }
 }
 
+// Lógica de la función limpiarCaja
 function limpiarCaja () {
     document.getElementById('amigo').value = '';
 }
-
-
-//agregarAmigo();
