@@ -3,6 +3,7 @@ let listaDeAmigos = [];
 let mensajeDeAlerta = 'Debe ingresar un nombre';
 let amigosSorteados = [];
 let listado = document.querySelector('#listaAmigos');
+let numeroMaximo = 0;
 
 // Lógica de la función agregarAmigo
 function agregarAmigo () {
@@ -30,12 +31,29 @@ function actualizarListado(persona) {
 // Lógica de la función sortearAmigo. Dado las características del juego, asumo que el sorteo se realiza un única vez
 // por lo que no sería necesario preguntar si el nombre ya ha sido sorteado antes.
 function sortearAmigo () {
+    let valorAleatorio = Math.floor(Math.random() * listaDeAmigos.length);
+    let amigoSorteado = listaDeAmigos[valorAleatorio];
+    let resultadoDelSorteo = document.querySelector('#resultado');
+    numeroMaximo = listaDeAmigos.length;
+
+    // verificamos si hay nombre en la lista de amigos tiene por lo menos un nombre
     if (listaDeAmigos.length > 0) {
-        let resultadoDelSorteo = document.querySelector('#resultado');
-        let valorAleatorio = Math.floor(Math.random() * listaDeAmigos.length);
-        let amigoSorteado = listaDeAmigos[valorAleatorio];
-        listado.innerHTML = '';
-        resultadoDelSorteo.innerHTML = `El amigo(a) sorteado(a) es ${amigoSorteado}`
+        // comprobamos si la lista de amigos sorteada alcanzó el máximo valor
+        if (amigosSorteados.length == numeroMaximo) {
+            console.log('largo de la lista amigos sorteados',amigosSorteados.length);
+            resultadoDelSorteo.innerHTML = 'Ya se sortearon todos los nombres';
+        } else {
+            // verificamos si el nombre sorteado está en la lista de los escogidos antes
+            // de estarlo, volvemos a llamar a la función usando recursividad
+            if (amigosSorteados.includes(amigoSorteado)) {
+                return sortearAmigo();
+            } else {
+                // si el nombre sorteado no está en la lista de los escogidos, lo agregamos
+                amigosSorteados.push(amigoSorteado);
+                listado.innerHTML = '';
+                resultadoDelSorteo.innerHTML = `El amigo(a) sorteado(a) es ${amigoSorteado}`
+            }
+        }
     } else {
         alert('Hasta el momento, no hay nombre ingresados. Por favor, ingrese al menos un nombre');
     }
