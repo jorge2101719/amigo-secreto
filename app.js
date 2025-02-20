@@ -28,8 +28,7 @@ function actualizarListado(persona) {
     listado.innerHTML += `<li>${persona}</li>`;    
 }
 
-// Lógica de la función sortearAmigo. Dado las características del juego, asumo que el sorteo se realiza un única vez
-// por lo que no sería necesario preguntar si el nombre ya ha sido sorteado antes.
+// Lógica de la función sortearAmigo. Dado las características del juego, asumo que el sorteo se puede realizar más de una vez
 function sortearAmigo () {
     let valorAleatorio = Math.floor(Math.random() * listaDeAmigos.length);
     let amigoSorteado = listaDeAmigos[valorAleatorio];
