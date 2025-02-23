@@ -1,6 +1,6 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 let listaDeAmigos = [];
-let mensajeDeAlerta = 'Debe ingresar un nombre';
+let mensajeDeAlerta = 'Por favor, ingrese un nombre';
 let amigosSorteados = [];
 let listado = document.querySelector('#listaAmigos');
 let numeroMaximo = 0;
@@ -39,7 +39,7 @@ function sortearAmigo () {
     if (listaDeAmigos.length > 0) {
         // comprobamos si la lista de amigos sorteada alcanzó el máximo valor
         if (amigosSorteados.length == numeroMaximo) {
-            console.log('largo de la lista amigos sorteados',amigosSorteados.length);
+            //console.log('largo de la lista amigos sorteados',amigosSorteados.length);
             resultadoDelSorteo.innerHTML = 'Ya se sortearon todos los nombres';
         } else {
             // verificamos si el nombre sorteado está en la lista de los escogidos antes
@@ -54,7 +54,7 @@ function sortearAmigo () {
             }
         }
     } else {
-        alert('Hasta el momento, no hay nombre ingresados. Por favor, ingrese al menos un nombre');
+        alert('Hasta el momento, no hay nombres ingresados. Por favor, ingrese al menos un nombre');
     }
 }
 
