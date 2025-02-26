@@ -23,11 +23,13 @@ function agregarAmigo () {
         actualizarListado(miAmigo);
         limpiarCaja();
     } else {
-        // se impide que el mensaje se muestre al cargar la página
+        // se impide que el mensaje se muestre al cargar la página y se hace uso de la función enfocar()
         if (miAmigo === '' && listaDeAmigos.length === 0) {
             alert(mensajeDeAlerta);
+            enfocar();
         } else {
             alert(mensajeDeAlerta);
+            enfocar();
         }
     }
 }
@@ -62,7 +64,9 @@ function sortearAmigo () {
             }
         }
     } else {
+        // Mensaje de advertencia si se intenta hacer un sorteo con la lista de amigos vacía; uso función enfocar()
         alert('Hasta el momento, no hay nombres ingresados. Por favor, ingrese al menos un nombre');
+        enfocar();
     }
 }
 
