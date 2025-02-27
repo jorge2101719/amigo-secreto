@@ -122,7 +122,8 @@ button {
 }
 
 .button-add:hover {
-    background-color: #a1a1a1;
+    /*background-color: #a1a1a1;*/
+    background-color: #7cfc00;
 }
 
 /* Listas */
