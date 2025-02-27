@@ -5,14 +5,6 @@ let amigosSorteados = [];
 let listado = document.querySelector('#listaAmigos');
 let numeroMaximo = 0;
 
-// se agrega la función enfocar con ayuda de focus, para que el cursor esté dentro del input
-function enfocar () {
-    document.getElementById('amigo').focus();
-}
-
-// llamada inicial, para que el cursor esté en el campo input desde el inicio
-enfocar();
-
 // Lógica de la función agregarAmigo
 function agregarAmigo () {
     let miAmigo = document.querySelector('#amigo').value;
@@ -77,4 +69,10 @@ function limpiarCaja () {
     enfocar();
 }
 
-//agregarAmigo();
+// se agrega la función enfocar con ayuda de focus, para que el cursor esté dentro del input
+function enfocar () {
+    document.getElementById('amigo').focus();
+}
+
+// llamada inicial, para que el cursor esté en el campo input desde el inicio
+enfocar();
