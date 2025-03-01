@@ -16,7 +16,7 @@ function agregarAmigo () {
         limpiarCaja();
     } else {
         // se impide que el mensaje se muestre al cargar la página y se hace uso de la función enfocar()
-        if (miAmigo === '' && listaDeAmigos.length === 0) {
+        if (miAmigo === '') {
             alert(mensajeDeAlerta);
             enfocar();
         } else {
@@ -25,11 +25,6 @@ function agregarAmigo () {
             alert('El nombre ingresado ya está en la lista');
             limpiarCaja();
             enfocar();
-            } else {
-                // se muestra un mensaje de alerta si el campo está vacío
-                alert(mensajeDeAlerta);
-                limpiarCaja();
-                enfocar();
             }
         }
     }
