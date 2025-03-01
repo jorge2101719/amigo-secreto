@@ -10,7 +10,7 @@ function agregarAmigo () {
     let miAmigo = document.querySelector('#amigo').value;
 
     // Al pulsar 'añadir', se verifica que el input no esté vacío
-    if (miAmigo != '') {
+    if (miAmigo != '' && !listaDeAmigos.includes(miAmigo)) {
         listaDeAmigos.push(miAmigo);
         actualizarListado(miAmigo);
         limpiarCaja();
@@ -20,7 +20,8 @@ function agregarAmigo () {
             alert(mensajeDeAlerta);
             enfocar();
         } else {
-            alert(mensajeDeAlerta);
+            // se muestra un mensaje de alerta si el nombre ingresado ya está en la lista
+            alert('El nombre ingresado ya está en la lista');
             enfocar();
         }
     }
