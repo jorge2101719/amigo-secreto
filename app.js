@@ -18,12 +18,20 @@ function agregarAmigo () {
         // se impide que el mensaje se muestre al cargar la página y se hace uso de la función enfocar()
         if (miAmigo === '') {
             //alert(mensajeDeAlerta);
-            Swal.fire(mensajeDeAlerta);
+            Swal.fire({
+                title: 'Campo vacío',
+                text: mensajeDeAlerta,
+                icon: 'error'
+            });
             enfocar();
         } else {
             if (listaDeAmigos.includes(miAmigo)) {
             // se muestra un mensaje de alerta si el nombre ingresado ya está en la lista
-            Swal.fire('El nombre ingresado ya está en la lista');
+            Swal.fire({
+                title: 'Nombre repetido',
+                text: 'El nombre ingresado ya está en la lista',
+                icon: 'warning'
+            });
             limpiarCaja();
             enfocar();
             }
@@ -46,8 +54,12 @@ function sortearAmigo () {
     if (listaDeAmigos.length > 0) {
         // comprobamos si la lista de amigos sorteada alcanzó el máximo valor
         if (amigosSorteados.length == numeroMaximo) {
-            //console.log('largo de la lista amigos sorteados',amigosSorteados.length);
-            resultadoDelSorteo.innerHTML = 'Ya se sortearon todos los nombres';
+            // si se cumple la condición, se muestra un mensaje de alerta
+            Swal.fire({
+                title: 'Se sortearon todos los nombres',
+                text: 'El sorteo ha finalizado',
+                icon: 'info'
+            });
         } else {
             // verificamos si el nombre sorteado está en la lista de los escogidos antes
             // de estarlo, volvemos a llamar a la función usando recursividad
@@ -62,7 +74,11 @@ function sortearAmigo () {
         }
     } else {
         // Mensaje de advertencia si se intenta hacer un sorteo con la lista de amigos vacía; uso función enfocar()
-        Swal.fire('Hasta el momento, no hay nombres ingresados. Por favor, ingrese al menos un nombre');
+        Swal.fire({
+            title: 'No hay nombres ingresados',
+            text: 'Por favor, ingrese al menos un nombre',
+            icon: 'error'
+        });
         enfocar();
     }
 }
