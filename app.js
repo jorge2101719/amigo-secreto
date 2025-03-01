@@ -17,12 +17,13 @@ function agregarAmigo () {
     } else {
         // se impide que el mensaje se muestre al cargar la página y se hace uso de la función enfocar()
         if (miAmigo === '') {
-            alert(mensajeDeAlerta);
+            //alert(mensajeDeAlerta);
+            Swal.fire(mensajeDeAlerta);
             enfocar();
         } else {
             if (listaDeAmigos.includes(miAmigo)) {
             // se muestra un mensaje de alerta si el nombre ingresado ya está en la lista
-            alert('El nombre ingresado ya está en la lista');
+            Swal.fire('El nombre ingresado ya está en la lista');
             limpiarCaja();
             enfocar();
             }
@@ -61,7 +62,7 @@ function sortearAmigo () {
         }
     } else {
         // Mensaje de advertencia si se intenta hacer un sorteo con la lista de amigos vacía; uso función enfocar()
-        alert('Hasta el momento, no hay nombres ingresados. Por favor, ingrese al menos un nombre');
+        Swal.fire('Hasta el momento, no hay nombres ingresados. Por favor, ingrese al menos un nombre');
         enfocar();
     }
 }
