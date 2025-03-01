@@ -6,6 +6,8 @@
     --color-button-hover: #e55720;
     --color-text: #444444;
     --color-white: #FFFFFF;
+    /*colores de la paleta de colores de la página de colores*/
+    --color-success: #4caf50;
 }
 
 /* Estilos generales */
@@ -123,7 +125,8 @@ button {
 
 .button-add:hover {
     /*background-color: #a1a1a1;*/
-    background-color: #7cfc00;
+    background-color: var(--color-success);
+    color: var(--color-white);
 }
 
 /* Listas */
@@ -160,4 +163,20 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+.button-reset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    width: 100%;
+    padding: 10px 40px;
+    color: var(--color-white);
+    background-color: var(--color-success);
+    font-size: 16px;
+}
+
+.button-reset:hover {
+    background-color: #46a049;
 }
