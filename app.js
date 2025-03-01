@@ -38,6 +38,7 @@ function agregarAmigo () {
         }
     }
 }
+
 // Lógica de la función actualizarListado
 function actualizarListado(persona) {
     listado.innerHTML += `<li>${persona}</li>`;    
@@ -100,10 +101,21 @@ enfocar();
 
 // Lógica de la función reiniciarSorteo
 function reiniciarSorteo () {
-    listaDeAmigos = [];
-    amigosSorteados = [];
-    document.querySelector('#resultado').innerHTML = '';
-    listado.innerHTML = '';
-    limpiarCaja();
-    enfocar();
+    // se verifica si la lista de amigos tiene por lo menos un nombre
+    if (listaDeAmigos.length > 0) {
+        listaDeAmigos = [];
+        amigosSorteados = [];
+        document.querySelector('#resultado').innerHTML = '';
+        listado.innerHTML = '';
+        limpiarCaja();
+        enfocar();
+    } else {
+        // Mensaje de advertencia si se intenta reiniciar el sorteo con la lista de amigos vacía
+        Swal.fire({
+            title: 'No hay nombres ingresados',
+            text: 'Por favor, ingrese al menos un nombre',
+            icon: 'error'
+        });
+        enfocar();
+    }
 }
