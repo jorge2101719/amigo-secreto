@@ -26,14 +26,14 @@ function agregarAmigo () {
             enfocar();
         } else {
             if (listaDeAmigos.includes(miAmigo)) {
-            // se muestra un mensaje de alerta si el nombre ingresado ya está en la lista
-            Swal.fire({
-                title: 'Nombre repetido',
-                text: 'El nombre ingresado ya está en la lista',
-                icon: 'warning'
-            });
-            limpiarCaja();
-            enfocar();
+                // se muestra un mensaje de alerta si el nombre ingresado ya está en la lista
+                Swal.fire({
+                    title: 'Nombre repetido',
+                    text: 'El nombre ingresado ya está en la lista',
+                    icon: 'warning'
+                });
+                limpiarCaja();
+                enfocar();
             }
         }
     }
@@ -97,3 +97,13 @@ function enfocar () {
 
 // llamada inicial, para que el cursor esté en el campo input desde el inicio
 enfocar();
+
+// Lógica de la función reiniciarSorteo
+function reiniciarSorteo () {
+    listaDeAmigos = [];
+    amigosSorteados = [];
+    document.querySelector('#resultado').innerHTML = '';
+    listado.innerHTML = '';
+    limpiarCaja();
+    enfocar();
+}
