@@ -20,9 +20,17 @@ function agregarAmigo () {
             alert(mensajeDeAlerta);
             enfocar();
         } else {
+            if (listaDeAmigos.includes(miAmigo)) {
             // se muestra un mensaje de alerta si el nombre ingresado ya está en la lista
             alert('El nombre ingresado ya está en la lista');
+            limpiarCaja();
             enfocar();
+            } else {
+                // se muestra un mensaje de alerta si el campo está vacío
+                alert(mensajeDeAlerta);
+                limpiarCaja();
+                enfocar();
+            }
         }
     }
 }
