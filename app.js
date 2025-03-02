@@ -61,6 +61,9 @@ function sortearAmigo () {
                 text: 'El sorteo ha finalizado',
                 icon: 'info'
             });
+            //
+            limpiarCaja();
+            resultadoDelSorteo.innerHTML = '';
         } else {
             // verificamos si el nombre sorteado está en la lista de los escogidos antes
             // de estarlo, volvemos a llamar a la función usando recursividad
