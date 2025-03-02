@@ -125,7 +125,7 @@ button {
 
 .button-add:hover {
     /*background-color: #a1a1a1;*/
-    background-color: var(--color-success);
+    background: linear-gradient(90deg, #080 0%, #0a0 50%, #0c0 100%);
     color: var(--color-white);
 }
 
@@ -162,21 +162,23 @@ ul {
 }
 
 .button-draw:hover {
-    background-color: var(--color-button-hover);
+    /*background-color: var(--color-button-hover);*/
+    background: linear-gradient(90deg, #00b 0%, #00d 50%, #00f 100%);
 }
 
 .button-reset {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 70px;
     width: 100%;
-    padding: 10px 40px;
+    padding: 18px 40px;
     color: var(--color-white);
-    background-color: var(--color-success);
     font-size: 16px;
+    background-color: #46a049;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .button-reset:hover {
-    background-color: #46a049;
+    background: linear-gradient(90deg, #0b0 0%, #0d0 50%, #0f0 100%);
 }
