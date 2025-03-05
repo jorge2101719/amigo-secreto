@@ -9,34 +9,32 @@ let numeroMaximo = 0;
 function agregarAmigo () {
     let miAmigo = document.querySelector('#amigo').value;
 
-    // Al pulsar 'añadir', se verifica que el input no esté vacío
-    if (miAmigo != '' && !listaDeAmigos.includes(miAmigo)) {
-        listaDeAmigos.push(miAmigo);
-        actualizarListado(miAmigo);
-        limpiarCaja();
+    // se verifica si el input está vacío
+    if (miAmigo === '') {
+        Swal.fire({
+            title: 'Campo vacío',
+            text: mensajeDeAlerta,
+            icon: 'error'
+        });
+        enfocar();
     } else {
-        // se impide que el mensaje se muestre al cargar la página y se hace uso de la función enfocar()
-        if (miAmigo === '') {
-            //alert(mensajeDeAlerta);
+        // se verifica si el nombre ingresado ya está en la lista
+        if (listaDeAmigos.includes(miAmigo)) {
             Swal.fire({
-                title: 'Campo vacío',
-                text: mensajeDeAlerta,
-                icon: 'error'
+                title: 'Nombre repetido',
+                text: 'El nombre ingresado ya está en la lista',
+                icon: 'warning'
             });
+            limpiarCaja();
             enfocar();
         } else {
-            if (listaDeAmigos.includes(miAmigo)) {
-                // se muestra un mensaje de alerta si el nombre ingresado ya está en la lista
-                Swal.fire({
-                    title: 'Nombre repetido',
-                    text: 'El nombre ingresado ya está en la lista',
-                    icon: 'warning'
-                });
-                limpiarCaja();
-                enfocar();
-            }
+            // si el campo input no está vacío y el nombre ingresado no está en la lista, se agrega a la lista  y se actualiza el listado
+            listaDeAmigos.push(miAmigo);
+            actualizarListado(miAmigo);
+            limpiarCaja();
         }
     }
+
 }
 
 // Lógica de la función actualizarListado
