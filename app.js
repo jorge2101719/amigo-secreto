@@ -55,7 +55,8 @@ function sortearAmigo () {
         if (amigosSorteados.length == numeroMaximo) {
             // si se cumple la condición, se muestra un mensaje de alerta
             Swal.fire({
-                title: '¿Desea reiniciar el sorteo?',
+                title: 'Has sorteado a todos los amigos',
+                text: '¿Desea reiniciar el sorteo?',
                 showDenyButton: true,
                 confirmButtonText: `Reiniciar`,
                 denyButtonText: `Cancelar`,
