@@ -8,6 +8,7 @@ let numeroMaximo = 0;
 // Lógica de la función agregarAmigo
 function agregarAmigo () {
     let miAmigo = document.querySelector('#amigo').value;
+    enfocar();
 
     // se verifica si el input está vacío
     if (miAmigo === '') {
@@ -16,7 +17,7 @@ function agregarAmigo () {
             text: mensajeDeAlerta,
             icon: 'error'
         });
-        enfocar();
+        limpiarCaja();
     } else {
         // se verifica si el nombre ingresado ya está en la lista
         if (listaDeAmigos.includes(miAmigo)) {
@@ -26,7 +27,6 @@ function agregarAmigo () {
                 icon: 'warning'
             });
             limpiarCaja();
-            enfocar();
         } else {
             // si el campo input no está vacío y el nombre ingresado no está en la lista, se agrega a la lista  y se actualiza el listado
             listaDeAmigos.push(miAmigo);
@@ -34,7 +34,6 @@ function agregarAmigo () {
             limpiarCaja();
         }
     }
-
 }
 
 // Lógica de la función actualizarListado
@@ -48,6 +47,7 @@ function sortearAmigo () {
     let amigoSorteado = listaDeAmigos[valorAleatorio];
     let resultadoDelSorteo = document.querySelector('#resultado');
     numeroMaximo = listaDeAmigos.length;
+    enfocar();
 
     // verificamos si hay nombre en la lista de amigos tiene por lo menos un nombre
     if (listaDeAmigos.length > 0) {
@@ -55,9 +55,15 @@ function sortearAmigo () {
         if (amigosSorteados.length == numeroMaximo) {
             // si se cumple la condición, se muestra un mensaje de alerta
             Swal.fire({
-                title: 'Se sortearon todos los nombres',
-                text: 'El sorteo ha finalizado',
-                icon: 'info'
+                title: '¿Desea reiniciar el sorteo?',
+                showDenyButton: true,
+                confirmButtonText: `Reiniciar`,
+                denyButtonText: `Cancelar`,
+                icon: 'warning'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    reiniciarSorteo();
+                }
             });
             // limpiamos la caja
             limpiarCaja();
@@ -81,16 +87,13 @@ function sortearAmigo () {
             title: 'No hay nombres ingresados',
             text: 'Por favor, ingrese al menos un nombre',
             icon: 'error'
-        });
-        enfocar();
+        })
     }
 }
 
 // Lógica de la función limpiarCaja
 function limpiarCaja () {
     document.getElementById('amigo').value = '';
-    // se incluye enfocar, para dar el efecto de espera en input después de ingresar un nombre
-    enfocar();
 }
 
 // se agrega la función enfocar con ayuda de focus, para que el cursor esté dentro del input
@@ -103,6 +106,8 @@ enfocar();
 
 // Lógica de la función reiniciarSorteo
 function reiniciarSorteo () {
+    enfocar();
+
     // se verifica si la lista de amigos tiene por lo menos un nombre
     if (listaDeAmigos.length > 0) {
         listaDeAmigos = [];
