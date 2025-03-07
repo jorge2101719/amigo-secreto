@@ -6,7 +6,7 @@
     --color-button-hover: #e55720;
     --color-text: #444444;
     --color-white: #FFFFFF;
-    /*colores de la paleta de colores de la página de colores*/
+    /*colores de la paleta*/
     --color-success: #4caf50;
 }
 
@@ -125,7 +125,7 @@ button {
 
 .button-add:hover {
     /*background-color: #a1a1a1;*/
-    background: linear-gradient(90deg, #080 0%, #0a0 50%, #0c0 100%);
+    background: linear-gradient(90deg, #0b0 0%, #0d0 50%, #0f0 100%);
     color: var(--color-white);
 }
 
