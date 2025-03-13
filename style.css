@@ -144,6 +144,7 @@ ul {
     font-size: 22px;
     font-weight: bold;
     text-align: center;
+   
 }
 
 /* Marco de resultado */
@@ -153,12 +154,6 @@ ul {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     padding: 10px 6em;
     margin: 10px 10px;
-}
-
-/* Efecto de caída */
-.caer {
-    opacity: 1;
-    transform: translateY(400px);
 }
 
 .btn-reinicio {
