@@ -138,13 +138,33 @@ ul {
     margin: 20px 0;
 }
 
+@keyframes miEfecto {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg);
+        background-color: yellowgreen;
+    }
+    50% {
+        transform: rotate(180deg);
+        background-color: yellow;
+    }
+    75% {
+        transform: rotate(270deg);
+        background-color: greenyellow;
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .result-list {
     margin-top: 15px;
     color: #05DF05;
     font-size: 22px;
     font-weight: bold;
     text-align: center;
-   
 }
 
 /* Marco de resultado */
@@ -154,8 +174,14 @@ ul {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     padding: 10px 6em;
     margin: 10px 10px;
+    margin-bottom: 50px;
+    animation-name: miEfecto;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-delay: .1s;
 }
 
+/* Botón de reinicio */
 .btn-reinicio {
     scale: .5;
     margin-right: 40px;
