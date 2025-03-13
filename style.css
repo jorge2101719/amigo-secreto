@@ -156,7 +156,7 @@ ul {
 }
 
 .btn-reinicio {
-    scale: 1;
+    scale: .5;
     margin-right: 40px;
 }
 
@@ -203,7 +203,7 @@ li:hover {
     justify-content: center;
     margin-top: 70px;
     width: 100%;
-    padding: 10px 50px;
+    padding: 5px;
     color: var(--color-white);
     font-size: 16px;
     background-color: #46a049;
