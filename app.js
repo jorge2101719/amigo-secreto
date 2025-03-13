@@ -91,6 +91,7 @@ function sortearAmigo () {
                 // si el nombre sorteado no está en la lista de los escogidos, lo agregamos
                 amigosSorteados.push(amigoSorteado);
                 listado.innerHTML = '';
+                agregarMarco();
                 resultadoDelSorteo.innerHTML = `El amigo(a) sorteado(a) es ${amigoSorteado}`;
                 efectoDelGanador();
             }
@@ -156,6 +157,7 @@ function reiniciarSorteo () {
         listado.innerHTML = '';
         limpiarCaja();
         enfocar();
+        quitarMarco();
     } else {
         // Mensaje de advertencia si se intenta reiniciar el sorteo con la lista de amigos vacía
         Swal.fire({
@@ -165,4 +167,12 @@ function reiniciarSorteo () {
         });
         enfocar();
     }
+}
+
+function agregarMarco () {
+    document.querySelector('#resultado').classList.add('marco');
+}
+
+function quitarMarco () {  
+    document.querySelector('#resultado').classList.remove('marco');
 }
