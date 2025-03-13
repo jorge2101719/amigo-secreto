@@ -20,7 +20,7 @@ campoInput.addEventListener('keypress', function (e) {
 
 // Lógica de la función agregarAmigo
 function agregarAmigo () {    
-    let miAmigo = campoInput.value.toLowerCase();
+    let miAmigo = campoInput.value.toUpperCase();
     enfocar();
 
     // se verifica si el input está vacío
