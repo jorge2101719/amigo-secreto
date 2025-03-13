@@ -154,6 +154,13 @@ li {
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     text-align: center;
+    transition: transform .5s, box-shadow .3s ease;
+}
+
+li:hover {
+    background-color: var(--color-tertiary);
+    transform: rotateX(360deg);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Botón de sortear título */
