@@ -92,7 +92,7 @@ function sortearAmigo () {
                 amigosSorteados.push(amigoSorteado);
                 listado.innerHTML = '';
                 resultadoDelSorteo.innerHTML = `El amigo(a) sorteado(a) es ${amigoSorteado}`;
-                lanzarConfeti();
+                efectoDelGanador();
             }
         }
     } else {
@@ -106,30 +106,30 @@ function sortearAmigo () {
 }
 
 // Lógica de la función lanzarConfeti
-function lanzarConfeti() {
-    var duracion = 2000;
-    var fin = Date.now() + duracion;
+function efectoDelGanador() {
+    let duracion = 5000;
+    let fin = Date.now() + duracion;
 
+    // se llama a la función confetti para que se ejecute el efecto de confeti
     (function frame() {
-      confetti({
-        particleCount: 5,
-        angle: 60,
-        spread: 55,
-        origin: { x: 0 }
-      });
+        confetti({
+            particleCount: 2,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 }
+        });
+        confetti({
+            particleCount: 2,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 }
+        });
 
-      confetti({
-        particleCount: 5,
-        angle: 120,
-        spread: 55,
-        origin: { x: 1 }
-      });
-
-      if (Date.now() < fin) {
-        requestAnimationFrame(frame);
-      }
+        if (Date.now() < fin) {
+            requestAnimationFrame(frame);
+        }
     })();
-  }
+}
 
 // Lógica de la función limpiarCaja
 function limpiarCaja () {
