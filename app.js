@@ -3,15 +3,16 @@ let listaDeAmigos = [];
 let mensajeDeAlerta = 'Por favor, ingrese un nombre';
 let amigosSorteados = [];
 let listado = document.querySelector('#listaAmigos');
+let campoInput = document.querySelector('#amigo');
 let numeroMaximo = 0;
 
 // Lógica para que el input solo acepte letras y espacios
-document.querySelector('#amigo').addEventListener('input', function () {
-    this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+campoInput.addEventListener('input', function () {
+    this.value = this.value.replace(/[^a-zA-ZñÑáéíóúÁÉÍÓÚ ]/i/g, '');
 });
 
 // Lógica para que el input acepte solo letras y espacios, y que el enter funcione como un click en el botón agregar
-document.querySelector('#amigo').addEventListener('keypress', function (e) {
+campoInput.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         agregarAmigo();
     }
@@ -19,7 +20,7 @@ document.querySelector('#amigo').addEventListener('keypress', function (e) {
 
 // Lógica de la función agregarAmigo
 function agregarAmigo () {    
-    let miAmigo = document.querySelector('#amigo').value.toLowerCase();
+    let miAmigo = campoInput.value.toLowerCase();
     enfocar();
 
     // se verifica si el input está vacío
@@ -134,12 +135,12 @@ function efectoDelGanador() {
 
 // Lógica de la función limpiarCaja
 function limpiarCaja () {
-    document.getElementById('amigo').value = '';
+    campoInput.value = '';
 }
 
 // se agrega la función enfocar con ayuda de focus, para que el cursor esté dentro del input
 function enfocar () {
-    document.getElementById('amigo').focus();
+    campoInput.focus();
 }
 
 // llamada inicial, para que el cursor esté en el campo input desde el inicio
