@@ -5,9 +5,14 @@ let amigosSorteados = [];
 let listado = document.querySelector('#listaAmigos');
 let numeroMaximo = 0;
 
+// Lógica para que el input solo acepte letras y espacios
+document.querySelector('#amigo').addEventListener('input', function () {
+    this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+});
+
 // Lógica de la función agregarAmigo
-function agregarAmigo () {
-    let miAmigo = document.querySelector('#amigo').value;
+function agregarAmigo () {    
+    let miAmigo = document.querySelector('#amigo').value.toLowerCase();
     enfocar();
 
     // se verifica si el input está vacío
