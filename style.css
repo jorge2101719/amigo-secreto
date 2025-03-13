@@ -155,6 +155,12 @@ ul {
     margin: 10px 10px;
 }
 
+/* Efecto de caída */
+.caer {
+    opacity: 1;
+    transform: translateY(400px);
+}
+
 .btn-reinicio {
     scale: .5;
     margin-right: 40px;
