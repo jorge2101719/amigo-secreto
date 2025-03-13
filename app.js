@@ -91,7 +91,8 @@ function sortearAmigo () {
                 // si el nombre sorteado no está en la lista de los escogidos, lo agregamos
                 amigosSorteados.push(amigoSorteado);
                 listado.innerHTML = '';
-                resultadoDelSorteo.innerHTML = `El amigo(a) sorteado(a) es ${amigoSorteado}`
+                resultadoDelSorteo.innerHTML = `El amigo(a) sorteado(a) es ${amigoSorteado}`;
+                lanzarConfeti();
             }
         }
     } else {
@@ -103,6 +104,32 @@ function sortearAmigo () {
         })
     }
 }
+
+// Lógica de la función lanzarConfeti
+function lanzarConfeti() {
+    var duracion = 2000;
+    var fin = Date.now() + duracion;
+
+    (function frame() {
+      confetti({
+        particleCount: 5,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 }
+      });
+
+      confetti({
+        particleCount: 5,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 }
+      });
+
+      if (Date.now() < fin) {
+        requestAnimationFrame(frame);
+      }
+    })();
+  }
 
 // Lógica de la función limpiarCaja
 function limpiarCaja () {
