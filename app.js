@@ -10,6 +10,13 @@ document.querySelector('#amigo').addEventListener('input', function () {
     this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
 });
 
+// Lógica para que el input acepte solo letras y espacios, y que el enter funcione como un click en el botón agregar
+document.querySelector('#amigo').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        agregarAmigo();
+    }
+});
+
 // Lógica de la función agregarAmigo
 function agregarAmigo () {    
     let miAmigo = document.querySelector('#amigo').value.toLowerCase();
