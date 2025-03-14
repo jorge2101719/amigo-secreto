@@ -125,8 +125,9 @@ button {
 
 .button-add:hover {
     /*background-color: #a1a1a1;*/
-    background: linear-gradient(90deg, #0b0 0%, #0d0 50%, #0f0 100%);
-    color: var(--color-white);
+    background-color: #dadac5;
+    color: var(--color-primary);
+    font-weight: bold;
 }
 
 /* Listas */
@@ -175,6 +176,7 @@ ul {
     padding: 10px 6em;
     margin: 10px 10px;
     margin-bottom: 50px;
+    background-color: #fdffb0;
     animation-name: miEfecto;
     animation-duration: 4s;
     animation-timing-function: linear;
@@ -190,9 +192,10 @@ ul {
 /* Elementos de lista */
 li {
     margin: 10px 0;
-    padding: 10px 10em;
+    padding: 10px 15em;
     border: 2px solid #000;
     border-radius: 25px;
+    background-color: #fdffb0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     text-align: center;
     transition: transform .5s, box-shadow .3s ease;
@@ -221,7 +224,7 @@ li:hover {
 
 .button-draw:hover {
     /*background-color: var(--color-button-hover);*/
-    background: linear-gradient(90deg, #00b 0%, #00d 50%, #00f 100%);
+    background: linear-gradient(90deg, #f40 0%, #f80 50%, #fb0 100%);
 }
 
 .button-reset {
