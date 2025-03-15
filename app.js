@@ -6,6 +6,16 @@ let listado = document.querySelector('#listaAmigos');
 let campoInput = document.querySelector('#amigo');
 let numeroMaximo = 0;
 
+
+// Lógica para mostrar un mensaje de bienvenida al cargar la página
+window.onload = function () {
+    Swal.fire({
+        title: '¡Bienvenido(a)!',
+        text: 'Este es un sorteo de amigo secreto. Ingrese los nombres de los participantes y haga clic en el botón "Sortear amigo" para saber quién le tocará a cada uno. ¡Buena suerte!',
+        icon: 'info'
+    });
+}
+
 // Lógica para que el input solo acepte letras y espacios
 campoInput.addEventListener('input', function () {
     this.value = this.value.replace(/[^a-zA-ZñÑáéíóúÁÉÍÓÚ ]/i/g, '');
