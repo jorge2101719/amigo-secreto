@@ -187,3 +187,12 @@ function agregarMarco () {
 function quitarMarco () {  
     document.querySelector('#resultado').classList.remove('marco');
 }
+
+function cambiarColor () {
+    const colorText = ['white', '#ffd700', '#ffa07a', '#e6e6fa', '#b0e57c'];
+    let titular = document.querySelector('.main-title');
+    titular.style.color = colorText[Math.floor(Math.random() * colorText.length)];
+    titular.style.padding = '10px';
+}
+
+setInterval(cambiarColor, 2000);
